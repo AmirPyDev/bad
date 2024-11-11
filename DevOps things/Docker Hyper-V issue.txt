@@ -1,0 +1,14 @@
+
+
+hyper v turn off commands on cmd (admin) or powershell (admin)
+
+1.bcdedit /set hypervisorlaunchtype off
+2.DISM /Online /Disable-Feature:Microsoft-Hyper-V
+
+
+hyper v turn on commands
+
+1.bcdedit /set hypervisorlaunchtype auto
+2.DISM /Online /Enable-Feature:Microsoft-Hyper-V /All
+
+

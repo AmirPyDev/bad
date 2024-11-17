@@ -1,0 +1,7 @@
+Point domain to a server         |     A / AAAA
+Alias domain to another domain   |     CNAME
+Configure email services         |     MX, TXT
+Route traffic to AWS resources   |     Alias
+Verify domain ownership          |     TXT
+Provide service-specific info    |     SRV
+Configure reverse DNS            |     PTR

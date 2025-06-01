@@ -1,0 +1,6 @@
+make sure to update secrets in github repo
+
+
+sudo apt install -y nodejs npm
+sudo npm install -g pm2
+

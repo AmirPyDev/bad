@@ -1,0 +1,26 @@
+<?php
+define('DB_NAME', 'wordpressDB');
+define('DB_USER', 'admin');
+define('DB_PASSWORD', 'Baloch179');
+define('DB_HOST', 'wordpress-database-1.cvokeey0s3km.me-central-1.rds.amazonaws.com');
+define('DB_CHARSET', 'utf8');
+define('DB_COLLATE', '');
+
+/**#@+ Authentication Unique Keys and Salts. */
+define('AUTH_KEY',         'replace-this');
+define('SECURE_AUTH_KEY',  'replace-this');
+define('LOGGED_IN_KEY',    'replace-this');
+define('NONCE_KEY',        'replace-this');
+define('AUTH_SALT',        'replace-this');
+define('SECURE_AUTH_SALT', 'replace-this');
+define('LOGGED_IN_SALT',   'replace-this');
+define('NONCE_SALT',       'replace-this');
+/**#@-*/
+
+$table_prefix = 'wp_';
+define('WP_DEBUG', false);
+
+if ( ! defined( 'ABSPATH' ) ) {
+  define( 'ABSPATH', __DIR__ . '/' );
+}
+require_once ABSPATH . 'wp-settings.php';

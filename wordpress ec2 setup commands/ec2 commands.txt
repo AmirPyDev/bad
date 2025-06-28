@@ -1,0 +1,28 @@
+# Update system
+sudo apt update && sudo apt upgrade -y
+
+# Install Apache, PHP, MySQL client, unzip, curl
+sudo apt install apache2 php libapache2-mod-php php-mysql mysql-client unzip curl -y
+
+# Enable and start Apache
+sudo systemctl enable apache2
+sudo systemctl start apache2
+
+# Go to web root and clean default page
+cd /var/www/html
+sudo rm index.html
+
+# Download and extract WordPress
+sudo curl -O https://wordpress.org/latest.zip
+sudo unzip latest.zip
+sudo mv wordpress/* .
+sudo rm -rf wordpress latest.zip
+
+# Set file permissions
+sudo chown -R www-data:www-data /var/www/html
+sudo find . -type d -exec chmod 755 {} \;
+sudo find . -type f -exec chmod 644 {} \;
+
+# Create wp-config.php
+sudo cp wp-config-sample.php wp-config.php
+sudo nano wp-config.php

@@ -1,0 +1,48 @@
+steps:
+1: 
+2:
+3:
+4:
+
+1.Configure Apache to Recognize the Domain:
+
+sudo nano /etc/apache2/sites-available/wordpress.conf
+
+
+2.paste:
+
+<VirtualHost *:80>
+    ServerAdmin webmaster@yourdomain.com
+    ServerName yourdomain.com
+    ServerAlias www.yourdomain.com
+    DocumentRoot /var/www/html
+
+    <Directory /var/www/html>
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+    </Directory>
+
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+
+
+
+3.Enable the site and reload Apache:
+
+sudo a2ensite wordpress.conf
+sudo a2enmod rewrite
+sudo systemctl reload apache2
+
+
+
+4.(Optional) Step 5: Enable HTTPS (Free SSL)
+
+sudo apt install certbot python3-certbot-apache -y
+sudo certbot --apache
+
+Follow prompts:
+Select your domain
+Certbot will configure SSL automatically
+It will redirect HTTP → HTTPS for you
